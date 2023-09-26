@@ -1,37 +1,11 @@
-const tasks = [
-    {
-        id: 1,
-        text: 'Doctors Appointment',
-        day: 'Feb 5th at 2:30pm',
-        reminder: true,
-    },
-    {
-        id: 2,
-        text: 'Meeting at School',
-        day: 'Feb 6th at 1:30pm',
-        reminder: true,
-    },
-    {
-        id: 3,
-        text: 'Food Shopping',
-        day: 'Feb 5th at 2:30pm',
-        reminder: false,
-    }
-];
+import Task from "./Task"
 
-const taskList = tasks.map(task =>(
-    <div key={task.id}>
-        <h3>{task.text}</h3>
-        <p>Day: {task.day}</p>
-        <p>Reminder: {task.reminder ? 'Yes' : 'No'}</p>
-    </div>
-));
+const Tasks = ({tasks}) => {
 
-// const filteredTask = tasks.filter(task => task.reminder);
-
-const Tasks = () => {
   return (
-    <div className="mt-5">{taskList}</div>
+    <div className="mt-5">{tasks.map(task =>(
+        <Task key={task.id} task={task} />
+    ))}</div>
   )
 }
 
