@@ -19,9 +19,19 @@ const tasks = [
     }
 ];
 
+const taskList = tasks.map(task =>(
+    <div key={task.id}>
+        <h3>{task.text}</h3>
+        <p>Day: {task.day}</p>
+        <p>Reminder: {task.reminder ? 'Yes' : 'No'}</p>
+    </div>
+));
+
+// const filteredTask = tasks.filter(task => task.reminder);
+
 const Tasks = () => {
   return (
-    <div>Tasks</div>
+    <div className="mt-5">{taskList}</div>
   )
 }
 
