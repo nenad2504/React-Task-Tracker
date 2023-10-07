@@ -10,8 +10,7 @@ const Header = (props) => {
   return (
     <header className='header'>
         <h1>Task Tracker</h1>
-        <h2>Hello {props.ime}</h2>
-        <Button color='blue' text='Add' onClick={onClick} />
+        <Button color='green' text='Add' onClick={onClick} />
     </header>
   )
 }
